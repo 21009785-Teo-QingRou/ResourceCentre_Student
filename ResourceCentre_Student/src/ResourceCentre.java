@@ -155,14 +155,16 @@ public class ResourceCentre {
 					ResourceCentre.showAvailability(chromebookList.get(i).getIsAvailable()),
 					chromebookList.get(i).getDueDate(),chromebookList.get(i).getOs());
 		}
-		
 		return output;
 	}
 	
 	
 	public static void viewAllChromebook(ArrayList<Chromebook> chromebookList) {
 		
-		String output = retrieveAllChromebook(chromebookList);
+		ResourceCentre.setHeader("Chromebook LIST");
+		String output = String.format("%-10s %-30s %-10s %-10s %-20s\n", "ASSET TAG", "DESCRIPTION",
+				"AVAILABLE", "DUE DATE","OS");
+		 output += retrieveAllChromebook(chromebookList);	
 		System.out.println(output);
 	}
 
@@ -255,9 +257,12 @@ public class ResourceCentre {
 		if (isLoaned == false) {
 			System.out.println("Invalid asset tag");
 		} else {
+
 			System.out.println("Camcorder " + tag + " loaned out");
 		}
-	}
+
+			System.out.println("Chromebook " + tag + " loaned out");
+		}
 	
 	//================================= Option 4 Return an item (CRUD - Update)=================================
 	public static boolean doReturnCamcorder(ArrayList<Camcorder> camcorderList,String tag) {
@@ -301,6 +306,7 @@ public class ResourceCentre {
 		}
 		return isReturned;
 	}
+
 	public static void returnChromebook(ArrayList<Chromebook> chromebookList) {
 		// write your code here
 		ResourceCentre.viewAllChromebook(chromebookList);
@@ -311,8 +317,10 @@ public class ResourceCentre {
 			System.out.println("Invalid asset tag");
 		} else {
 			System.out.println("Chromebook " + tag + " returned");
-		}
-	}
 
-	
+		}
+
+	}
 }
+
+
