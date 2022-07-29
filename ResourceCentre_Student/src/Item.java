@@ -25,6 +25,7 @@ public class Item {
 	}
 
 	public void setDueDate(String dueDate) {
+		//Justin Wong: I will commit here
 		this.dueDate = dueDate;
 	}
 
@@ -33,6 +34,7 @@ public class Item {
 	}
 
 	public void setIsAvailable(boolean isAvailable) {
+		//Justin Wong: I will commit here
 		this.isAvailable = isAvailable;
 	}
 }
